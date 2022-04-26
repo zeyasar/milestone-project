@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import AppRouter from "./router/AppRouter";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useContext, useEffect } from "react";
+import { AppContext } from "./context/AppContext";
+import { onAuthStateChanged} from "firebase/auth";
+import {auth} from './utils/firebase'
+
 
 function App() {
+
+  const {setCurrentUser, setLoading} = useContext(AppContext)
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      setCurrentUser(user ? user : null)
+      setLoading(false)
+    })
+    return () => {
+      unsubscribe()
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <AppRouter />
+        <ToastContainer />
     </div>
   );
 }
