@@ -15,9 +15,6 @@ import Footer from '../components/Footer';
 
 
 
-
-
-
 const AppRouter = () => {
     return (
         <>

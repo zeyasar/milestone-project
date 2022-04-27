@@ -1,8 +1,10 @@
 import { createContext, useState, useEffect} from "react";
 import React from "react";
 // eslint-disable-next-line
-import firebase from "../utils/firebase";
+import firebase, {auth} from "../utils/firebase";
 import { getDatabase, onValue, ref} from "firebase/database";
+import { onAuthStateChanged} from "firebase/auth";
+
 
 export const AppContext = createContext();
 
@@ -10,13 +12,20 @@ export const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
 
   let [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      setCurrentUser(user ? user : null)
+      localStorage.setItem('currentUser', JSON.stringify(currentUser))
+    })
+    return () => {
+      unsubscribe()
+    }
+  },[currentUser])
   // eslint-disable-next-line
   const [loading, setLoading] = useState();
   const [blogList, setBlogList] = useState();
    
-  if (!currentUser){
-    currentUser = JSON.parse(localStorage.getItem('currentUser'))
-  }
 
   useEffect(() => {
     const db = getDatabase();
