@@ -32,6 +32,7 @@ export default function About() {
         </Typography>
         <Typography variant="body1" sx={{mt:5}}> <Link href="mailto:zynpysr67@gmail.com" rel="noopener" underline="none">Send email</Link> :
         zynpysr67@gmail.com</Typography>
+        <Typography variant="body1" sx={{mt:5}}><Link href="https://github.com/zeyasar/milestone-project" target="_blank" rel="noopener" underline="none">Project Source Code</Link></Typography>
       </Container>
     </Box>
     </div>
