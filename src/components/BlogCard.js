@@ -25,6 +25,7 @@ export default function BlogCard({ item }) {
   const handleDetail = () => {
     if (!currentUser) {
       toastWarnNotify("Please login for more.");
+      navigate('/Login');
     } else {
       navigate(`Details/${item.id}`);
     }
