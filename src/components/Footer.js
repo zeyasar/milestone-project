@@ -1,7 +1,7 @@
 import * as React from 'react';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import TwitterIcon from '@mui/icons-material/Twitter';
+// import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -37,10 +37,10 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth="sm" sx={{textAlign: 'center'}}>
-          <LinkedInIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
+        <Link href="https://www.linkedin.com/in/zeynep-yasar-dev/" target='_blank' rel="noopener" underline="none"><LinkedInIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/></Link>
           <Link href="https://github.com/zeyasar" target='_blank' rel="noopener" underline="none"><GitHubIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/></Link>
-          <TwitterIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
-          <InstagramIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
+          {/* <TwitterIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/> */}
+          <Link href="https://www.instagram.com/zynpysr67/" target='_blank' rel="noopener" underline="none"><InstagramIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/></Link>
           <Copyright />
         </Container>
       </Box>
