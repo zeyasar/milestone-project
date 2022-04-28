@@ -5,13 +5,12 @@ import {
   Button,
   Container,
   Grid,
-  Link,
   TextField,
   Typography,
 } from '@mui/material';
 import { blue } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { login,loginWithGoogle } from '../utils/firebase';
 
 
@@ -88,13 +87,13 @@ function Login() {
         </Grid>
       <p>
       Need an account?
-        <Link
-          sx={{
+        <Link to='/Register'
+          style={{
+            color: 'rgb(56,116,203)',
             textDecoration: 'none',
             fontWeight: '600',
             paddingLeft: '0.5rem',
           }}
-          href="/Register"
         >
           Sign Up
         </Link>
