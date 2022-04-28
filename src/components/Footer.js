@@ -40,7 +40,7 @@ export default function StickyFooter() {
           <LinkedInIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
           <Link href="https://github.com/zeyasar" target='_blank' rel="noopener" underline="none"><GitHubIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/></Link>
           <TwitterIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
-          <Link href="https://www.instagram.com/zynpysr67/" target='_blank' rel="noopener" underline="none"><InstagramIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/></Link>
+          <InstagramIcon color="primary" sx={{ height: 32, width: 32, margin:'0.5rem' }}/>
           <Copyright />
         </Container>
       </Box>
