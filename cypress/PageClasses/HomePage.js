@@ -34,4 +34,7 @@ export class HomePage{
     assertBlogUpdatedAlert(){
         cy.get('[role=alert]').contains('Blog Updated Successfuly').should('be.visible')
     }
+    assertRegisterSuccessAlertVisible(){
+        cy.get('[role=alert]').contains('Registered successfully!').should('be.visible')
+    }
 }
