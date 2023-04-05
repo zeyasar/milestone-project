@@ -10,6 +10,8 @@ describe('US06 Kullanici siteye üye olmak icin gerekli islemleri yapmalidir' , 
         cy.visit('http://localhost:3000/');
         hp.clickLoginBtn();
         lp.clickSignUpBtn();
+        //register işlemi için username , surname , email, password kısmını değiştirmeniz gerekebilir.
+        //aksi takdirde bu test fail olacaktır!!!
         rp.signUpThisSite("username" , "surname" , "username@gmail.com" , "Password1234.");
         hp.assertRegisterSuccessAlertVisible();
     });
