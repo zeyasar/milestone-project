@@ -37,4 +37,7 @@ export class HomePage{
     assertRegisterSuccessAlertVisible(){
         cy.get('[role=alert]').contains('Registered successfully!').should('be.visible')
     }
+    assertEmailAllReadyInUseAlertVisible(){
+        cy.get('[role=alert]').contains('email-already-in-use').should('be.visible')
+    }
 }

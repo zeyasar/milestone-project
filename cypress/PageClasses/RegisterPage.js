@@ -7,5 +7,13 @@ export class RegisterPage{
         cy.get('[name=password2]').type(password)
         cy.get('button.MuiButton-contained').click()
     }
+    assertAllReqiuredAlertTextVisible(){
+        cy.get('p.MuiFormHelperText-contained').each((element)=>{
+            cy.wrap(element).should('be.visible')
+        })
+    }
+    clickRegisterBtn(){
+        cy.get('button.MuiButton-contained').click();
+    }
 
 }
